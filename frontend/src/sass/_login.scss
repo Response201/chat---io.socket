@@ -1,0 +1,38 @@
+.container-content h1 {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 2rem;
+}
+
+.container-content p {
+	text-align: center;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+.user-name-login {
+	display: flex;
+	flex-direction: column;
+	@media (min-width: 768px) {
+		text-transform: uppercase;
+	}
+}
+.username-input {
+	background-color: #7e7e97;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 16px;
+	outline: none;
+}
+
+.start-chat-button {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: #e788a2;
+	color: #2d2e57;
+	font-size: 16px;
+	cursor: pointer;
+	outline: none;
+	text-transform: uppercase;
+}

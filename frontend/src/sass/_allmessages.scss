@@ -1,0 +1,311 @@
+@use "mixins";
+.allmessageContainer {
+	width: 100%;
+	height: 95%;
+	min-height: fit-content;
+	background-color: #2d2e57;
+	overflow-y: scroll;
+
+	@include mixins.devices(tablet) {
+		height: 80%;
+	}
+	.user,
+	.notUser {
+		display: flex;
+		flex-direction: row;
+		justify-content: start;
+		width: 92%;
+		margin: 1rem 0;
+		padding: 0 4%;
+		height: fit-content;
+
+		.profilContainer {
+			margin-top: 40px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: end;
+		}
+	}
+	.user {
+		justify-content: end;
+
+		.timeAndMessage {
+			width: 40%;
+			display: flex;
+			flex-direction: column;
+			align-items: end;
+		}
+
+		.time {
+			width: 95%;
+			p {
+				font-size: 0.7rem;
+				width: 100%;
+			}
+		}
+	}
+
+	.notUser {
+		flex-direction: row-reverse;
+		align-items: start;
+		justify-content: start;
+		.timeAndMessage {
+			background-color: #2d2e57;
+			width: 40%;
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			justify-content: start;
+		}
+
+		.time {
+			width: 93%;
+			display: flex;
+			justify-content: end;
+			p {
+				font-size: 0.7rem;
+				width: 100%;
+			}
+		}
+	}
+
+	.message {
+		width: 100%;
+		word-wrap: break-word;
+		word-break: break-all;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.profilContainer {
+    p{
+
+&:hover{
+
+text-decoration: underline;
+cursor: pointer;
+
+}
+
+    }
+		img {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+		}
+	}
+}
+.allmessageContainer::-webkit-scrollbar {
+	display: none;
+}
+
+.allmessageContainer {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+/* edit message */
+
+p {
+	margin: 0;
+	padding: 0;
+
+}
+
+textarea {
+	all: unset;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	margin: 0;
+	padding: 0;
+}
+
+.buttons {
+	padding: 5px 0;
+	display: flex;
+	width: 95%;
+	justify-content: end;
+	align-items: end;
+}
+
+.save-edit-btn,
+.cancel-edit-btn,
+.edit-message-btn {
+	cursor: pointer;
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: none;
+	margin: 0;
+	font-size: 10px;
+}
+
+.save-edit-btn,
+.cancel-edit-btn {
+	background-color: #9966ff9b;
+	color: white;
+	margin-left: 1rem;
+	&:hover {
+		background-color: #6f49ba9b;
+	}
+}
+
+.edit-message-btn {
+	background-color: #9966ff9b;
+	color: white;
+	&:hover {
+		background-color: #6f49ba9b;
+	}
+}
+
+/* bubbles */
+.bubble {
+	box-sizing: border-box;
+	float: left;
+	width: auto;
+	max-width: 100%;
+	position: relative;
+	clear: both;
+	font-weight: 600;
+	background: #9966ff;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.15, #bee2ff),
+		color-stop(1, #95c2fd)
+	);
+	background-image: -webkit-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
+	background-image: -moz-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
+	background-image: -ms-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
+	background-image: -o-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
+	background-image: linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
+	border: solid 1px rgba(0, 0, 0, 0.5);
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+
+	-webkit-box-shadow: inset 0 8px 5px rgba(255, 255, 255, 0.65),
+		0 1px 2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: inset 0 8px 5px rgba(255, 255, 255, 0.65),
+		0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 8px 5px rgba(255, 255, 255, 0.65),
+		0 1px 2px rgba(0, 0, 0, 0.2);
+	padding: 6px 20px;
+	color: #000;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+	word-wrap: break-word;
+}
+
+.bubble:before,
+.bubble:after {
+	border-radius: 20px / 5px;
+	content: "";
+	display: block;
+	position: absolute;
+}
+
+.bubble:before {
+	border: 10px solid transparent;
+	border-bottom-color: rgba(0, 0, 0, 0.5);
+	bottom: 0px;
+	left: -7px;
+	z-index: -2;
+}
+
+.bubble:after {
+	border: 8px solid transparent;
+	border-bottom-color: #bee2ff; /* arrow color */
+	bottom: 1px;
+	left: -5px;
+}
+
+.bubble-alt {
+	float: right;
+}
+.bubble-alt:before {
+	left: auto;
+}
+.bubble-alt:after {
+	left: auto;
+	right: -5px;
+}
+
+/* pink bubble */
+.pink {
+	background: #7acd47;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.15, #f786bf),
+		color-stop(1, #f8a5ce)
+	);
+	background-image: -webkit-linear-gradient(bottom, #f786bf 15%, #f8a5ce 100%);
+	background-image: -moz-linear-gradient(bottom, #f786bf 15%, #f8a5ce 100%);
+	background-image: -ms-linear-gradient(bottom, #f786bf 15%, #f8a5ce 100%);
+	background-image: -o-linear-gradient(bottom, #f786bf 15%, #f8a5ce 100%);
+	background-image: linear-gradient(bottom, #f786bf 15%, #f8a5ce 100%);
+}
+.pink:after {
+	border-bottom-color: #f786bf;
+}
+
+.rainbow {
+	background: -moz-linear-gradient(
+		326deg,
+		#f786bf 0%,
+		#e066ff 22%,
+		#cc66ff 41%,
+		#b366ff 65%,
+		#9966ff 100%
+	); /* FF3.6+ */
+	background: -webkit-gradient(
+		linear,
+		326deg,
+		color-stop(0%, #f786bf),
+		color-stop(22%, #e066ff),
+		color-stop(41%, #cc66ff),
+		color-stop(65%, #b366ff),
+		color-stop(100%, #9966ff)
+	); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(
+		326deg,
+		#f786bf 0%,
+		#e066ff 22%,
+		#cc66ff 41%,
+		#b366ff 65%,
+		#9966ff 100%
+	); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(
+		326deg,
+		#f786bf 0%,
+		#e066ff 22%,
+		#cc66ff 41%,
+		#b366ff 65%,
+		#9966ff 100%
+	); /* Opera 11.10+ */
+	background: -ms-linear-gradient(
+		326deg,
+		#f786bf 0%,
+		#e066ff 22%,
+		#cc66ff 41%,
+		#b366ff 65%,
+		#9966ff 100%
+	); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f786bf', endColorstr='#9966ff', GradientType='1'); /* for IE */
+	background: linear-gradient(
+		124deg,
+		#f786bf 0%,
+		#e066ff 22%,
+		#cc66ff 41%,
+		#b366ff 65%,
+		#9966ff 100%
+	); /* W3C */
+}
+
+.rainbow:after {
+	border-bottom-color: #9966ff;
+}

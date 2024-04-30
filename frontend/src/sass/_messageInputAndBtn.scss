@@ -1,0 +1,52 @@
+.messageInputAndBtnContainer {
+	width: 100%;
+	height: 10%;
+	display: flex;
+	justify-content: center;
+
+	.messageInputAndBtn {
+		width: 100%;
+		position: relative;
+		height: 100%;
+		background-color: #2d2e57;
+		.newMessageInput {
+			width: 83%;
+			padding-left: 2%;
+			height: 97%;
+			border: none;
+			border-top: 1px solid #a5a5bc34;
+			background-color: #2d2e57;
+			outline: none;
+		}
+
+		button {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: none;
+			border-top: 1px solid #a5a5bc34;
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: 15%;
+			font-size: clamp(0.8rem, 5vw, 1rem);
+			background-color: #2d2e57;
+
+			.iconBtn {
+				border: 1px solid #a5a5bc34;
+				border-radius: 50%;
+				width: clamp(1.5rem, 5vw, 2.1rem);
+				height: clamp(1.5rem, 5vw, 2.1rem);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-right: 2%;
+
+				&:hover {
+					background-color: #a5a5bc34;
+				}
+			}
+		}
+	}
+}
