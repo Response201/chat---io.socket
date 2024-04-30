@@ -2,7 +2,7 @@
 
 
 
-![App Screenshot](https://i.ibb.co/k4yyfvT/ssad.jpg)![App Screenshot](https://i.ibb.co/mHrCvz5/fwefwe.jpg)
+![App Screenshot](https://i.ibb.co/mHrCvz5/fwefwe.jpg)
 
 
 
